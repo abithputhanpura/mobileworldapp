@@ -6,6 +6,8 @@
 
         <title>PhoneBin</title>
         <!-- CSS only -->
+ <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>       
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style>
 .navbar-brand span {
@@ -30,6 +32,7 @@
 
 </head>
 <body>
+    
     <div>
         <div>
         <nav class="navbar navbar-light" style="background-color: #C1F8CF;">
@@ -49,7 +52,7 @@
     <div>
   <div class="position-absolute top-0 start-50 py-2">
       <nav class="nav nav-pills flex-column flex-sm-row">
-<a href="{{ route('register') }}" class="navbar-brand">Home</a>
+<a href="{{ route('register') }}" class="nav-link"><strong>Home</strong></a>
     <a href="{{ route('sell') }}" class="nav-link">Sell</a>
     <a href="{{ route('donate') }}" class="nav-link">Donate</a>
     <a href="{{ route('register') }}" class="nav-link">Recycle</a>
@@ -57,7 +60,7 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
-                    <a class="nav-link active" href="{{ route('login') }}" class="">Log in</a>
+                    <a class="nav-link active" href="{{ route('login') }}" >Log in</a>
                         @if (Route::has('register'))
                         <a class="nav-link" href="{{ route('register') }}" >Register</a>
                         @endif
@@ -66,14 +69,57 @@
              @endif
              
              </div>
-                    </div>
+             
+            <div>
+             <!-- slideshow -->
+
+             <div id="carouselExampleCaptions" class="carousel slide m-4" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.androidauthority.com/wp-content/uploads/2019/03/Huawei-Mate-20-X-in-hand.jpg" class="d-block m-auto w-50 " alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://s3n.cashify.in/imageLibrary/Rashmika_a6a184c316a3.png" class="d-block  w-25 m-auto" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.budgetdumpster.com/blog/wp-content/uploads/2018/01/how-to-recycle-your-old-cell-phone.jpg" class="d-block m-auto" style="width:300px height:300px;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>RECYCLE</h5>
+        <p>Recycle your old device safely.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+                    <!-- into to recycling importance -->
                     <div>
                 <div class="w-50 p-3 h-80 d-inline-block" style="font-family: 'Montserrat', sans-serif;">
                 <h2 class="color: #22577E"></h2>
                 <h1 class="text-center color: #22577E ">Why recycling ?</h1>
         <p class="text-center">Most cell phones contain precious metals and plastics that can be recycled to save energy and resources that would otherwise be required to mine or manufacture. When placed in a landfill, these materials can pollute the air and contaminate soil and drinking water</p>
-        <h3 class="color: #22577E">Let’s make the world a better place</h3>
-        <h5 style="color: #78938A">Recycle your old phone now!</h5>
+        <h3 class="text-center color: #22577E">Let’s make the world a better place</h3>
+        <h5 class="text-center color: #78938A">Recycle your old phone now!</h5>
         <img src="https://9to5google.com/wp-content/uploads/sites/4/2022/02/05_Recycled-material-of-S22-Ultra_HI.jpg?quality=82&strip=all&w=1000" width="600" height="400" alt="phone recycle parts">
     </div>
          <div class="float-end px-2 py-2">
@@ -81,6 +127,7 @@
                   
                 </div>    
         </div>
+        <!-- different steps of mobile process -->
         <div class="container">
   <div class="row">
     <div class="col text-center">
@@ -111,7 +158,42 @@
   </div>
 </div>
         </div>
-              
+<!-- trusting us caption -->
+<div class="row">
+        <div class="col-8 col-lg-2 offset-lg-1 sm-3">
+        <h4>Why People Trust Us</h4>
+        <ul class="list-unstyled">
+        
+          <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">One-stop Solution</span></li>
+          <li class="mb-2 "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">Sell or donate </span></li>
+          <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">Trained Professionals</span></li>
+          <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">Amazing Prices</span></li>
+          <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">Quick &amp; Hassle-free</span></li>
+<li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg><span class="px-2 fs-6">Guaranteed Safety</span></li>
+        </ul>
+        </div>
+
+<div class="col-4 col-xl-2 m-auto ">
+<h4>Need of recycling</h4>
+<div class="ratio ratio-16x9 h-auto">
+  <iframe src="https://www.youtube.com/watch?v=ClEp_ubHEYk" title="YouTube video" allowfullscreen></iframe>
+</div>
+  </div>
+        </div>
+  
+              <!-- footer stars here -->
         <footer class="bd-footer py-2 mt-5 bg-light">
   <div class="container py-2">
     <div class="row">
