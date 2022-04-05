@@ -5,63 +5,153 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>PhoneBin</title>
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+.navbar-brand span {
+    display: inline-block;
+    color: #e99c2e;}
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    .container py-2 span {
+    display: inline-block;
+    color: #e99c2e;}
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
+    body{
+        background: ;
+                
             }
-        </style>
-    </head>
-    <body class="antialiased">
-         
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-       
+
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+    <div>
+        <div>
+        <nav class="navbar navbar-light" style="background-color: #C1F8CF;">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">
+      <img src="https://re-collect.com.au/img/svg/stepone-green.svg" width="50" height="30" alt="logo image" >
+      Phone<span>Bin</span>
+    </a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    </nav>
+  </div>
+
+        </div>
+    <div>
+  <div class="position-absolute top-0 start-50 py-2">
+      <nav class="nav nav-pills flex-column flex-sm-row">
+<a href="{{ route('register') }}" class="navbar-brand">Home</a>
+    <a href="{{ route('sell') }}" class="nav-link">Sell</a>
+    <a href="{{ route('donate') }}" class="nav-link">Donate</a>
+    <a href="{{ route('register') }}" class="nav-link">Recycle</a>
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
+                    <a class="nav-link active" href="{{ route('login') }}" class="">Log in</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        <a class="nav-link" href="{{ route('register') }}" >Register</a>
                         @endif
+                        </nav> 
                     @endauth
+             @endif
+             
+             </div>
+                    </div>
                     <div>
-                        <a href="#" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Recycle </a>
-                    <a href="/sell" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Sell  </a>
-                    <a href="#" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Donate  </a>
-        </div>
-                </div>
-            @endif
-    <div class="float-left">
-        <h1>why recycling</h1>  
-   
-        </div>
-        <div class="float-right">
-            <img src="https://erth.app/wp-content/uploads/erth-img2.png"  alt="recycle-image">
+                <div class="w-50 p-3 h-80 d-inline-block" style="font-family: 'Montserrat', sans-serif;">
+                <h2 class="color: #22577E"></h2>
+                <h1 class="text-center color: #22577E ">Why recycling ?</h1>
+        <p class="text-center">Most cell phones contain precious metals and plastics that can be recycled to save energy and resources that would otherwise be required to mine or manufacture. When placed in a landfill, these materials can pollute the air and contaminate soil and drinking water</p>
+        <h3 class="color: #22577E">Let’s make the world a better place</h3>
+        <h5 style="color: #78938A">Recycle your old phone now!</h5>
+        <img src="https://9to5google.com/wp-content/uploads/sites/4/2022/02/05_Recycled-material-of-S22-Ultra_HI.jpg?quality=82&strip=all&w=1000" width="600" height="400" alt="phone recycle parts">
     </div>
-    <div class="relative">
-    <div><h2>Why People Trust Us</h2> </div>
-    <div><h3>One-stop Solution</h3></div>
-    <div><h2>Sell or donate your smartphone</h2></div>
-    <div><h3>Trained Professionals</h3> </div>
-    <div><h2>Trusted experts to help every step of the way</h2> </div>
-    <div><h3>Amazing Prices</h3> </div>
-    <div><h2>selling, you’ll surely love our prices</h2> </div>
-    <div><h3>Quick &amp; Hassle-free</h3> </div>
-    <div><h2>Get mobile care in a click at your home or office</h2></div>
-    <div><h3>Guaranteed Safety</h3> </div>
+         <div class="float-end px-2 py-2">
+                    <img src="https://erth.app/wp-content/uploads/erth-img2.png"  alt="recycle-image">
+                  
+                </div>    
         </div>
- 
-            
-    </body>
-</html>
+        <div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <img src="https://www.cashify.in/static/recycle/phone.svg">
+      <h6>Select Device</h6>
+      <p>Tell us a little about the device you’d like to recycle</p>
+    </div>
+    <div class="col text-center">
+    <img src="https://www.cashify.in/static/recycle/pick.svg">
+      <h6>Book Pickup</h6>
+      <p >We’ll then assign a date & time for the pickup from your address</p>
+    </div>
+    <div class="col text-center">
+    <img src="https://www.cashify.in/static/recycle/reward.svg">
+      <h6>Handover Device</h6>
+      <p>Handover the device and sit relax</p>
+    </div>
+    <div class="col text-center">
+    <img src="https://www.cashify.in/static/recycle/help/help-2.svg">
+      <h6>Device Analysis</h6>
+      <p>After analysis we will provide the best price</p>
+    </div>
+    <div class="col text-center">
+    <img src="https://www.cashify.in/static/recycle/help/help-6.svg">
+      <h6>Payment</h6>
+      <p>We will process the payment to the selected payment mode</p>
+    </div>
+  </div>
+</div>
+        </div>
+              
+        <footer class="bd-footer py-2 mt-5 bg-light">
+  <div class="container py-2">
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+          <img src="https://re-collect.com.au/img/svg/stepone-green.svg" width="50" height="30" alt="logo image" >
+          <span class="fs-5">PhoneBin</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Designed and built with all the love in the world for the help of E-waste Management.</li>
+          <li class="mb-2">A demo website on smartphone recycling</li>
+  
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="/">About</a></li>
+          <li class="mb-2"><a href="#">Sell</a></li>
+          <li class="mb-2"><a href="">Donate</a></li>
+          <li class="mb-2"><a href="">Recycle</a></li>
+          <li class="mb-2"><a href="">Home</a></li>
+        </ul>
+      </div>
+     
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Ewaste websites</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="https://www.attero.in/">Attero</a></li>
+          <li class="mb-2"><a href="https://ncashjunk.com/">ncashjunk</a></li>
+          <li class="mb-2"><a href="https://www.zolopik.com/">zolopik</a></li>
+          <li class="mb-2"><a href="http://www.extracarbon.com/">extracarbon</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+  <div class="text-center p-3" style="background-color:#00AFC1;">
+    <h6>Copyright @ 2022 PhoneBin All rights reserved</h6>
+  </div>
+</footer>
+
+</body>

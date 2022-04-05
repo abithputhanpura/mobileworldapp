@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonateController;
 use App\Http\Controllers\SellController;
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sell', [SellController::class,'sell']);
+Route::get('sell', [SellController::class,'sell'])->name('sell')->middleware(['auth']);
+
+Route::get('donate', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
 
 
-Route::get('/donate', function () {
-    return view('donate');
+Route::get('/recycle', function () {
+    return view('recycle');
 });
 
 

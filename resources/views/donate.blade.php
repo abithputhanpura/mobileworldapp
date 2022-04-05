@@ -1,3 +1,5 @@
+@extends('dashboard')
+@section('hello')
 <html>
     <head>
         <title> donate</title>
@@ -99,3 +101,4 @@
       
 </body>
 </html>
+@endsection
