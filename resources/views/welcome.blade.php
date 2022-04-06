@@ -24,22 +24,16 @@
             }
 
     </style>
-
-
-
-
-
-
 </head>
 <body>
-    
+    <!-- nav bar -->
     <div>
         <div>
         <nav class="navbar navbar-light" style="background-color: #C1F8CF;">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
       <img src="https://re-collect.com.au/img/svg/stepone-green.svg" width="50" height="30" alt="logo image" >
-      Phone<span>Bin</span>
+     <strong> Phone<span>Bin</span></strong>
     </a>
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
@@ -55,7 +49,7 @@
 <a href="{{ route('register') }}" class="nav-link"><strong>Home</strong></a>
     <a href="{{ route('sell') }}" class="nav-link">Sell</a>
     <a href="{{ route('donate') }}" class="nav-link">Donate</a>
-    <a href="{{ route('register') }}" class="nav-link">Recycle</a>
+    <a href="{{ route('recycle') }}" class="nav-link">Recycle</a>
             @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
@@ -115,11 +109,11 @@
                     <!-- into to recycling importance -->
                     <div>
                 <div class="w-50 p-3 h-80 d-inline-block" style="font-family: 'Montserrat', sans-serif;">
-                <h2 class="color: #22577E"></h2>
+                <h2 style="color: #22577E"></h2>
                 <h1 class="text-center color: #22577E ">Why recycling ?</h1>
         <p class="text-center">Most cell phones contain precious metals and plastics that can be recycled to save energy and resources that would otherwise be required to mine or manufacture. When placed in a landfill, these materials can pollute the air and contaminate soil and drinking water</p>
-        <h3 class="text-center color: #22577E">Let’s make the world a better place</h3>
-        <h5 class="text-center color: #78938A">Recycle your old phone now!</h5>
+        <h3 class="text-center" style="color: #22577E">Let’s make the world a better place</h3>
+        <h5 class="text-center" style="color: #78938A">Recycle your old phone now!</h5>
         <img src="https://9to5google.com/wp-content/uploads/sites/4/2022/02/05_Recycled-material-of-S22-Ultra_HI.jpg?quality=82&strip=all&w=1000" width="600" height="400" alt="phone recycle parts">
     </div>
          <div class="float-end px-2 py-2">
@@ -185,10 +179,10 @@
         </ul>
         </div>
 
-<div class="col-4 col-xl-2 m-auto ">
+<div class="col-sm-4 m-auto ">
 <h4>Need of recycling</h4>
-<div class="ratio ratio-16x9 h-auto">
-  <iframe src="https://www.youtube.com/watch?v=ClEp_ubHEYk" title="YouTube video" allowfullscreen></iframe>
+<div class="ratio ratio-16x9">
+  <iframe src="https://www.youtube.com/embed/ClEp_ubHEYk" title="How To Recycle Cell Phones" allowfullscreen></iframe>
 </div>
   </div>
         </div>

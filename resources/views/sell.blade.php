@@ -1,76 +1,71 @@
-@extends('dashboard')
-@section('hello')
-<html>
-    <head>
-        <title> sell</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- CSS only -->
+  @extends('layouts.master')
+  @section('content')
+  <html>
+  <head>
+    <title>sell.me</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-  </style>
 </head>
 <body>
-<h3> hi welcome</h3>
-<div class="container">
-  <div class="row">
-  <div class="row row-cols-2">
+    <h3 >SELL PHONE</h3>
+		
+	<h3 class="py-2 px-2">hello </h3>
+</div>
+<form  method="POST" action="{{route('sell.store')}}">
+  @csrf
+    <div class="container">
+	  <div class="row">
     <div class="col">
-    <h4>Brand</h4>
-    </div>
-    <div class="col">
-    <select class="form-select" aria-label="Default select example">
-    <option selected>select brand</option>
-    @foreach ($name as $item)
-    <option value="1">{{$item->brand}}</option>
-    @endforeach
+    <div class="row row-cols-2">
+	  <div class="col">Brand</div>
+    <div class="col">   
+    <select id="brand" name="brand" class="form-select" aria-label="Default select example" >
+    <option value="0">select brand</option>
+    <option value="Apple">Apple</option> 
+    <option value="Samsung" >Samsung</option> 
+    <option value="mi" selected="selected">mi</option> 
+    <option value="others">other</option> 
     </select>
-    </div>
-  <div class="col-lg">
-  <h4>Model</h4>
+</div>
+<div class="col g-4">Model</div>
+   <div class="col g-4"><select name="model" class="form-select" aria-label="Default select example">
+    <option >select Model</option> 
+     @foreach ($mobile1 as $item)
+    <option value="{!!$item->model!!}">{{$item->model}}</option> 
+      @endforeach  
+  </select>
   </div>
-  <div class="col-g-3">
-  <select class="form-select" aria-label="Default select example">
-  <option selected>select model</option>
-  @foreach ($name as $item)
-  @
-  <option >{{$item->model}}</option>
-   @endforeach
-   </select>
-    </div>
-  <div class="col-lg">
-  <h4>Varient</h4>
-  </div>
-  <div class="col-g-3">
-  <select class="form-select" aria-label="Default select example">
-  <option selected>select varient</option>
-  <option >4gb</option>
-  <option >6gb</option>
-  </div>
-  <div class="col-lg-g-3">
-    <h3>Extra Credit After Analysis Please Check Below Applicable Conditions:</h3>
-  </div>
-  <div class="col-lg">
+
+  <div class="col g-4">Varient</div>
+    <div class="col g-4">
+    <select class="form-select" name='variant' aria-label="Default select example">
+    <option selected>select varient</option>
+    <option value="4gb">4gb</option> 
+    <option value="6gb">6gb</option> 
+    </select></div>
+	</div>
+	<div class="g-4 py-2"><h4>Extra Credit After Analysis Please Check Below Applicable Conditions:</h4></span></div>
+	<div class="col-lg">
     <div class="form-check">
-  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
-  <label class="form-check-label">Warranty</label>
-  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
-  <label class="ml-4 form-check-label">Charger</label>
-  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
-  <label class="ml-4 form-check-label">Original Box</label>
-  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" >
-  <label class="ml-4 form-check-label">Original Invoice</label>
-  </div>
-  <div class="col-4">
-  <button type="button" class="btn btn-danger">SELL PHONE</button>
+  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="warranty" >
+  <label class="ml-4 form-check-label">Warranty</label>
+  <input class="ml-4form-check-input" type="checkbox" id="check2" name="option2" value="charger" >
+  <label class="form-check-label">Charger</label>
+  <input class="ml-4form-check-input" type="checkbox" id="check3" name="option3" value="original box" >
+  <label class="form-check-label">Original Box</label>
+  <input class="ml-4form-check-input" type="checkbox" id="check4" name="option4" value="original invoice" >
+  <label class="form-check-label">Original Invoice</label>
   </div>
 </div>
-<div class="col-lg-8">
-    <img src="https://www.quickmobile.in/assets/images/get_highest_value_sell_hide.webp">
-    </div>
+</div>
+  <div class="col">
+    <img src="https://www.quickmobile.in/assets/images/get_highest_value_sell_hide.webp"></div>
+    </div>   
+  </div>  
+</div>
+   <div class="float-end px-4 mt-4 mb-4">
+    <button id ='sell-btn' type="submit" type="button" class="btn btn-primary">SELL PHONE</button> 
+</form>
+  </div>
+</div>
 </body>
-</html>
 @endsection

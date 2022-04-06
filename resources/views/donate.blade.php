@@ -1,5 +1,5 @@
-@extends('dashboard')
-@section('hello')
+@extends('layouts.master')
+  @section('content')
 <html>
     <head>
         <title> donate</title>

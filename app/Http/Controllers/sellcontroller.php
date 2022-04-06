@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers;
 
-namespace App\Http\Request;
- 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
 class SellController extends Controller
-{ public function sell()
-    {
-        $brands = DB::table('smartphones')->distinct()->get();
-    
- 
-        return view('sell', [ 'name' => $brands]);
-    }
+{   public function sell()
+        {
+            $apple = DB::table('smartphones')->where('brand', 'Apple')->get();
+            $samsung = DB::table('smartphones')->where('brand', 'Samsung')->get();
+            $mi = DB::table('smartphones')->where('brand', 'mi')->get();
+            $others = DB::table('smartphones')->where('brand', 'others')->get();
+     
+            return view('sell', ['mobile1' => $apple], ['mobile2' =>$samsung],['mobile3' =>$mi],['mobile4' =>$others]);
+        }
 
 
-    public function donate()
-    {
-        return view('donate');
-    }
 }

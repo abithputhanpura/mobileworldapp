@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\SellController;
+use App\Http\Controllers\sellsubmit;
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +22,13 @@ Route::get('/', function () {
 
 Route::get('sell', [SellController::class,'sell'])->name('sell')->middleware(['auth']);
 
+Route::post('sell', [sellsubmit::class,'create'])->name('sell.store');
+
 Route::get('donate', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
 
+Route::get('recycle', [MainController::class,'screen'])->name('recycle')->middleware(['auth']);
 
-Route::get('/recycle', function () {
-    return view('recycle');
-});
+
 
 
 Route::get('/dashboard', function () {

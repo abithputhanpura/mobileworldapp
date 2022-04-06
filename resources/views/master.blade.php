@@ -28,7 +28,7 @@
         </div> 
     <a class="navbar-brand" href="index.html">Phone<span>bin</span></a>
 
-        
+        <!-- nav bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -47,6 +47,9 @@
         </div>
                 </div>
             
+
+
+                <!-- why recycling -->
             <div class="container">
                 <div class="row">
     <div class="col-6 col-md-4 gx-4 ">
