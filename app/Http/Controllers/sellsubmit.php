@@ -13,7 +13,7 @@ class sellsubmit extends Controller
     $request->validate([
       'brand' => 'required',
       'model' => 'required',
-      'varient' => 'required'
+      'variant' => 'required'
    
     ]);
 

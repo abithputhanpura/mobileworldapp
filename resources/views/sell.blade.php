@@ -30,7 +30,7 @@
    <div class="col g-4"><select name="model" class="form-select" aria-label="Default select example">
     <option>select Model</option> 
    
-     @foreach ($mobile1 as $item)
+     @foreach ($mobile as $item)
     <option value="{!!$item->model!!}">{{$item->model}}</option> 
       @endforeach  
      
