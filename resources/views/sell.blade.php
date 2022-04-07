@@ -6,13 +6,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <h3 >SELL PHONE</h3>
-		
-	<h3 class="py-2 px-2">hello </h3>
+<div class="container">
+    <h1 class="text-center">SELL YOUR PHONE HERE </h1>
 </div>
 <form  method="POST" action="{{route('sell.store')}}">
   @csrf
-    <div class="container">
+    <div class="container py-2" style="font-family: 'Montserrat', sans-serif;">
 	  <div class="row">
     <div class="col">
     <div class="row row-cols-2">
@@ -25,13 +24,50 @@
     <option value="mi" selected="selected">mi</option> 
     <option value="others">other</option> 
     </select>
+
+   @php
+    if(isset($_POST['submit'])){
+    if(!empty($_POST['brand'])) {
+        $selected = $_POST['brand'];
+        echo 'You have chosen: ' . $selected;
+    } else {
+        echo 'Please select the value.';
+    }
+    }
+@endphp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <div class="col g-4">Model</div>
    <div class="col g-4"><select name="model" class="form-select" aria-label="Default select example">
     <option >select Model</option> 
+   
      @foreach ($mobile1 as $item)
     <option value="{!!$item->model!!}">{{$item->model}}</option> 
       @endforeach  
+     
   </select>
   </div>
 
