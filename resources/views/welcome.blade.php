@@ -27,6 +27,39 @@
 </head>
 <body>
     <!-- nav bar -->
+<div class="mx-2 container-fluid" style="background-color: #C1F8CF;">
+    <ul class=" p-2 nav nav-pills">
+  <li class=" nav-item">
+  <a class="navbar-brand" href="#">
+      <img src="https://re-collect.com.au/img/svg/stepone-green.svg" width="50" height="30" alt="logo image" >
+      Phone<span>Bin</span>
+    </a>
+  </li>
+  <li class="mx-auto nav-item">
+  </li>
+  <li class="nav-item">
+  <a href="{{ route('register') }}" class="nav-link">Home</a>
+  </li>
+  <li class="nav-item">
+  <a href="{{ route('sell') }}" class="nav-link">Sell</a>
+  </li>
+  <li class="nav-item">
+  <a href="{{ route('donate') }}" class="nav-link">Donate</a>
+  </li>
+  <li class="nav-item">
+  <a href="{{ route('recycle') }}" class="nav-link">Recycle</a>
+  </li>
+  <li class="nav-item">
+  
+  
+
+  <!-- <form class="px-4 d-flex justify-content-end">
+      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</ul>
+          </div>
+    --------------------------
     <div>
         <div>
         <nav class="navbar navbar-light" style="background-color: #C1F8CF;">
@@ -39,32 +72,42 @@
       <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    </nav>
-  </div>
+    
 
         </div>
     <div>
-  <div class="position-absolute top-0 start-50 py-2">
+  <div class="navbar-brand" >
       <nav class="nav nav-pills flex-column flex-sm-row">
 <a href="{{ route('register') }}" class="nav-link"><strong>Home</strong></a>
     <a href="{{ route('sell') }}" class="nav-link">Sell</a>
     <a href="{{ route('donate') }}" class="nav-link">Donate</a>
-    <a href="{{ route('recycle') }}" class="nav-link">Recycle</a>
+    <a href="{{ route('recycle') }}" class="nav-link">Recycle</a> -->
             @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
                     <a class="nav-link active" href="{{ route('login') }}" >Log in</a>
+                    </li>
+                    <li class="nav-item">
                         @if (Route::has('register'))
                         <a class="nav-link" href="{{ route('register') }}" >Register</a>
                         @endif
-                        </nav> 
+                        </li>
+                         
                     @endauth
              @endif
-             
+             <div class="float-end">
+             <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    </nav></div>
              </div>
              
             <div>
+
+            </nav>
+  </div>
              <!-- slideshow -->
 
              <div id="carouselExampleCaptions" class="carousel slide m-4" data-bs-ride="carousel">
