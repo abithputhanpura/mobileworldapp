@@ -10,10 +10,10 @@ class sellcontrol extends Controller
     public function sell()
         {
 
-            $apple = DB::table('smartphone')->where('brand', 'Apple')->get();
-            $samsung = DB::table('smartphone')->where('brand', 'Samsung')->get();
-            $mi = DB::table('smartphone')->where('brand', 'mi')->get();
-            $others = DB::table('smartphone')->where('brand', 'others')->get();
+            $apple = DB::table('phones')->where('brand', 'Apple')->get();
+            $samsung = DB::table('phones')->where('brand', 'Samsung')->get();
+            $mi = DB::table('phones')->where('brand', 'mi')->get();
+            $others = DB::table('phones')->where('brand', 'others')->get();
 
             $user=DB::table('users')->get('name');
      
