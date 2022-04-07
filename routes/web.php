@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DonateController;
-use App\Http\Controllers\SellController;
+use App\Http\Controllers\sellcontrol;
 use App\Http\Controllers\sellsubmit;
 use App\Http\Controllers\MainController;
 /*
@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sell', [SellController::class,'sell'])->name('sell')->middleware(['auth']);
+Route::get('sell', [sellcontrol::class,'sell'])->name('sell')->middleware(['auth']);
 
 Route::post('sell', [sellsubmit::class,'create'])->name('sell.store');
 
