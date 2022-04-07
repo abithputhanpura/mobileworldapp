@@ -18,51 +18,17 @@
 	  <div class="col">Brand</div>
     <div class="col">   
     <select id="brand" name="brand" class="form-select" aria-label="Default select example" >
-    <option value="0">select brand</option>
+    <option >select brand</option>
     <option value="Apple">Apple</option> 
     <option value="Samsung" >Samsung</option> 
     <option value="mi" selected="selected">mi</option> 
     <option value="others">other</option> 
     </select>
 
-   @php
-    if(isset($_POST['submit'])){
-    if(!empty($_POST['brand'])) {
-        $selected = $_POST['brand'];
-        echo 'You have chosen: ' . $selected;
-    } else {
-        echo 'Please select the value.';
-    }
-    }
-@endphp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <div class="col g-4">Model</div>
    <div class="col g-4"><select name="model" class="form-select" aria-label="Default select example">
-    <option >select Model</option> 
+    <option>select Model</option> 
    
      @foreach ($mobile1 as $item)
     <option value="{!!$item->model!!}">{{$item->model}}</option> 

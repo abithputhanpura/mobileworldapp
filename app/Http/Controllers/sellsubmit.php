@@ -10,9 +10,15 @@ class sellsubmit extends Controller
 {
     public function create(Request $request)
  {
+    $request->validate([
+      'brand' => 'required',
+      'model' => 'required',
+      'varient' => 'required'
+   
+    ]);
 
 
-    
+   //  post control
     $sell = new sell();
 
     $sell->brand = $request->input('brand');
