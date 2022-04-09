@@ -32,6 +32,6 @@ class sellsubmit extends Controller
 
     $sell->save();
 
-    return redirect()->route('login');
+    return redirect('sell/sold');
  }
 }

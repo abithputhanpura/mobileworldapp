@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<ul class="nav justify-content-end">
+<!-- <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="/home">HOME</a>
   </li>
@@ -26,12 +26,12 @@
   <li class="nav-item">
     <a class="nav-link disabled">Disabled</a>
   </li> -->
-</ul>
 
 
 
 
-<h1 style="align:center">Recycling Mobile Devices</h1>
+
+<h1 style="mx-auto">Recycling Mobile Devices</h1>
 </br>
 </br>
 
@@ -50,25 +50,41 @@
       
     <div class="col">
 
-    <form action="recycle" method="POST">
+    <form action="{{route('recycle.store')}}" method="POST">
     @csrf
 
       <div class="dropdown">
-              <h5>brand
-  <button class="btn btn-secondary dropdown-toggle" type="button" name="bt1" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <h5>brand</h5>
+              <select id="brand" name="brand" class="form-select" aria-label="Default select example" >
+    <option >select brand</option>
+    <option value="Apple">Apple</option> 
+    <option value="Samsung" >Samsung</option> 
+    <option value="mi" selected="selected">mi</option> 
+    <option value="others">other</option> 
+    </select>
+              <!-- <button class="btn btn-secondary dropdown-toggle" type="button" name="bt1" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Select your mobile brand
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="#">Apple</a></li>
     <li><a class="dropdown-item" href="#">Samsung</a></li>
     <li><a class="dropdown-item" href="#">Xiaomi</a></li>
-  </ul>
-</div></h5></br>
+  </ul> -->
+</div><br>
 
 
       <div class="dropdown">
       <h5>Model
-  <button class="btn btn-secondary dropdown-toggle" type="button" name="bt2" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+     
+   <div class="col g-4"><select name="model" class="form-select" aria-label="Default select example">
+    <option>select Model</option> 
+   
+     @foreach ($data as $item)
+    <option value="{!!$item!!}">{{$item}}</option> 
+      @endforeach     
+  </select>
+  </div>
+  <!-- <button class="btn btn-secondary dropdown-toggle" type="button" name="bt2" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Select model
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -76,7 +92,7 @@
     <li><a class="dropdown-item" href="#">Samsung</a></li>
     <li><a class="dropdown-item" href="#">Xiaomi</a></li>
   </ul>
-</div></h5></br>
+</div></h5></br> -->
 <h5 style="align:center">Switch On
 <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" >
   <label class="btn btn-outline-primary" for="btncheck1"></label>
@@ -88,7 +104,7 @@
 
 
 
-    </div></form>
+    </div>
 
 
 
@@ -138,7 +154,7 @@
 <div class="col-12">
     <button type="submit" class="btn btn-primary">RECYCLE</button>
   </div>
-
+  </form>
     </div>
 
 

@@ -2,10 +2,13 @@
   @section('content')
   <html>
   <head>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+  </style>
 
     <title>sell.me</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="container">
@@ -13,54 +16,26 @@
 </div>
 <form  method="POST" action="{{route('sell.store')}}">
   @csrf
+    <div class="container py-2" style="font-family: 'Montserrat', sans-serif;">
+	  <div class="row">
+    <div class="col">
+    <div class="row row-cols-2">
+	  <div class="col">Brand</div>
+    <div class="col">   
+    <select name="brand" id="brand" class="form-control input-lg dynamic" data-dependent="model">
+     <option value="">Select Brand</option>
+    @foreach($country_list as $country)
+     <option value="{{ $country->brand}}">{{ $country->brand }}</option>
+     @endforeach
+    </select>
+   </div>
+<div class="col g-4">Model</div>
+   <div class="col g-4"><select name="model" id="model" class="form-control input-lg dynamic" data-dependent="price">
+     <option value="">Select Model</option>
+  </select>
+  </div>
 
-  <div class="container">
-    <div class="panel panel-default">
-      <div class="panel-heading">Select State and get bellow Related City</div>
-      <div class="panel-body">
-            <div class="form-group">
-                <label for="title">Select State:</label>
-                <select name="state" class="form-control" style="width:350px">
-                    <option value="">--- Select State ---</option>
-                    @foreach ($states as $key) 
-                        <option value="{{ $key->brand_name }}">{{ $key->brand_name  }}</option>
-                     @endforeach
-                    <option value="">phones</option>
-                  </select>
-            </div>
-            <div class="form-group">
-                <label for="title">Select City:</label>
-                <select name="city" class="form-control" style="width:350px">
-                </select>
-            </div>
-      </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('select[name="state"]').on('change', function() {
-            var stateID = $(this).val();
-            if(stateID) {
-                $.ajax({
-                    url: '/sell/ajax/'+stateID,
-                    type: "GET",
-                    dataType: "json",
-                    success:function(data) {
-                        
-                        $('select[name="city"]').empty();
-                        $.each(data, function(key, value) {
-                            $('select[name="city"]').append('<option value="'+ key +'">'+ value +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('select[name="city"]').empty();
-            }
-        });
-    });
-</script>
-
+ 
 
   <div class="col g-4">Varient</div>
     <div class="col g-4">
@@ -69,7 +44,18 @@
     <option value="4gb">4gb</option> 
     <option value="6gb">6gb</option> 
     </select></div>
-	</div> 
+	
+  <div class="col g-4">Gauranteed amount</div>
+  <div class="col g-4">
+    <select name="price" id="price" class="form-control input-lg">
+     <option value="">Price</option>
+    </select>
+   </div>
+   {{ csrf_field() }}
+   <br />
+   <br />
+  </div>
+  
 	<div class="g-4 py-2"><h4>Extra Credit After Analysis Please Check Below Applicable Conditions:</h4></span></div>
 	<div class="col-lg">
     <div class="form-check">
@@ -89,11 +75,47 @@
     </div>   
   </div>  
 </div>
+</div>
    <div class="float-end px-4 mt-4 mb-4">
     <button id ='sell-btn' type="submit" type="button" class="btn btn-primary">SELL PHONE</button> 
 </form>
   </div>
 </div>
-
 </body>
+
+<script>
+$(document).ready(function(){
+
+ $('.dynamic').change(function(){
+  if($(this).val() != '')
+  {
+   var select = $(this).attr("id");
+   var value = $(this).val();
+   var dependent = $(this).data('dependent');
+   var _token = $('input[name="_token"]').val();
+   $.ajax({
+    url:"{{ route('dynamicdependent.fetch') }}",
+    method:"POST",
+    data:{select:select, value:value, _token:_token, dependent:dependent},
+    success:function(result)
+    {
+     $('#'+dependent).html(result);
+    }
+
+   })
+  }
+ });
+
+ $('#country').change(function(){
+  $('#state').val('');
+  $('#city').val('');
+ });
+
+ $('#state').change(function(){
+  $('#city').val('');
+ });
+ 
+
+});
+</script>
 @endsection

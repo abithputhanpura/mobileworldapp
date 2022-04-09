@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class sellcontrol extends Controller
 {
     public function sell()
@@ -20,4 +21,5 @@ class sellcontrol extends Controller
             return view('sell',['mobile' => $data], ['mobile1' => $apple], ['mobile2' =>$samsung],['mobile3' =>$mi],['mobile4' =>$others],['user'=>$user]);
         }
 
-}
+       
+    }
