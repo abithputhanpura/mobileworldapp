@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('phones', function (Blueprint $table) {
-            $table->id();
-            $table->string('brand');
-            $table->string('model');
-            $table->integer('price');
-            $table->timestamps();
+        Schema::table('recycledetails', function (Blueprint $table) {
+            $table->string('email');
+
         });
     }
 
@@ -29,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phones');
+        Schema::table('recycledetails', function (Blueprint $table) {
+            $table->dropColumn('email');
+        });
     }
 };

@@ -27,7 +27,7 @@
 </head>
 <body>
     <!-- nav bar -->
-<div class="mx-2 container-fluid" style="background-color: #C1F8CF;">
+<div class="mx-2 container-fluid " style="background-color: #C1F8CF;">
     <ul class=" p-2 nav nav-pills">
   <li class=" nav-item">
   <a class="navbar-brand" href="#">
@@ -50,42 +50,12 @@
   <a href="{{ route('recycle') }}" class="nav-link">Recycle</a>
   </li>
   <li class="nav-item">
-  
-  
-
-  <!-- <form class="px-4 d-flex justify-content-end">
-      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-</ul>
-          </div>
-    --------------------------
-    <div>
-        <div>
-        <nav class="navbar navbar-light" style="background-color: #C1F8CF;">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="#">
-      <img src="https://re-collect.com.au/img/svg/stepone-green.svg" width="50" height="30" alt="logo image" >
-     <strong> Phone<span>Bin</span></strong>
-    </a>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    
-
-        </div>
-    <div>
-  <div class="navbar-brand" >
-      <nav class="nav nav-pills flex-column flex-sm-row">
-<a href="{{ route('register') }}" class="nav-link"><strong>Home</strong></a>
-    <a href="{{ route('sell') }}" class="nav-link">Sell</a>
-    <a href="{{ route('donate') }}" class="nav-link">Donate</a>
-    <a href="{{ route('recycle') }}" class="nav-link">Recycle</a> -->
             @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        <a class="nav-link active"  href="{{ url('/dashboard') }}">Dashboard</a>
+                        </li>
                     @else
+                    <li class="nav-item">
                     <a class="nav-link active" href="{{ route('login') }}" >Log in</a>
                     </li>
                     <li class="nav-item">
@@ -96,10 +66,7 @@
                          
                     @endauth
              @endif
-             <div class="float-end">
-             <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Enter Pincode" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+         
     </form>
     </nav></div>
              </div>
@@ -120,15 +87,15 @@
     <div class="carousel-item active">
       <img src="https://www.androidauthority.com/wp-content/uploads/2019/03/Huawei-Mate-20-X-in-hand.jpg" class="d-block m-auto w-50 " alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+        <h5>Save Mother Earth</h5>
+        <p>Recycle Reuse Smartphones.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://s3n.cashify.in/imageLibrary/Rashmika_a6a184c316a3.png" class="d-block  w-25 m-auto" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+        <h5>Resale Value</h5>
+        <p>Get the maximum selling price.</p>
       </div>
     </div>
     <div class="carousel-item">
@@ -248,11 +215,11 @@
       <div class="col-6 col-lg-2 offset-lg-1 mb-3">
         <h5>Links</h5>
         <ul class="list-unstyled">
-          <li class="mb-2"><a href="/">About</a></li>
-          <li class="mb-2"><a href="#">Sell</a></li>
-          <li class="mb-2"><a href="">Donate</a></li>
-          <li class="mb-2"><a href="">Recycle</a></li>
-          <li class="mb-2"><a href="">Home</a></li>
+          <li class="mb-2"><a href="/about">About</a></li>
+          <li class="mb-2"><a href="/sell">Sell</a></li>
+          <li class="mb-2"><a href="/donate">Donate</a></li>
+          <li class="mb-2"><a href="/recycle">Recycle</a></li>
+          <li class="mb-2"><a href="#">Home</a></li>
         </ul>
       </div>
      

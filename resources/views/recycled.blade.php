@@ -1,5 +1,5 @@
 @extends('layouts.master')
-  @section('content')
+@section('content')
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,7 +23,7 @@ color: hsl(52, 0%, 98%);
 
 
 <body>
-<form method="POST" action="{{route('address.store')}}">
+<form method="POST" action="{{route('recycled.store')}}">
   @csrf
 <div class="container py-5">
   <div class="row d-flex justify-content-center align-items-center">
@@ -125,9 +125,6 @@ color: hsl(52, 0%, 98%);
 
 </body>
 </html>
-
-
-
 
 <script>
 $(document).ready(function(){

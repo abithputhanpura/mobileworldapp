@@ -10,7 +10,9 @@ use App\Http\Livewire\brandmodeldropdown;
 use App\Http\Controllers\sellsubmitted;
 use App\Http\Controllers\DynamicDependent;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\addresscontroller;
+use App\Http\Controllers\recycleadress;
+use App\Http\Controllers\dashb;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,38 +28,49 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sell', [sellcontrol::class,'sell'])->name('sell')->middleware(['auth']);
+Route::get('/about', function () {
+    return view('about');
+});
 
+Route::post('donate', [DonateController::class,'donatecreate'])->name('donate.store')->middleware(['auth']);
 
-Route::post('sell', [sellsubmit::class,'create'])->name('sell.store');
-
-Route::get('sell/sold', [sellsubmitted::class,'sold'])->name('sell.sold');
+// Route::get('donate/donated', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
 
 Route::get('donate', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
 
-Route::get('recycle', [MainController::class,'screen'])->name('recycle')->middleware(['auth']);
-
-Route::get('recycle/recycledone', [MainController::class,'screen'])->name('recycledone');
-
-Route::post('recycle', [recycled::class,'create'])->name('recycle.store');
+Route::get('dashboard', [dashb::class,'index'])->name('dashboard')->middleware(['auth']);
 
 
-Route::get('recycle/recycledone', function () {
-    return view('recycledone');
-});
+Route::get('recycle', [HomeController::class,'recycled'])->middleware(['auth'])->name('recycle');
+
+Route::post('recycle/recyclefetch', [HomeController::class,'recyclefetch'])->middleware(['auth'])->name('recycle.fetch');
+
+Route::post('recycle', [recycled::class,'create'])->name('recycle.store')->middleware(['auth']);
+
+Route::get('recycle/recycled', [MainController::class,'recycleindex'])->middleware(['auth'])->name('recycled');
+
+Route::post('recycle/recycled/recycledfetch', [MainController::class,'recycledfetch'])->name('recycled.fetch');
+
+Route::post('recycle/recycled', [recycleadress::class,'address'])->name('recycled.store');
+
+
+Route::get('sell/sold', [addresscontroller::class,'index'])->middleware(['auth']);
+
+Route::post('sell/sold/fetch', [addresscontroller::class,'fetch'])->name('dynamic.fetch')->middleware(['auth']);
+  
+
+Route::post('sell/sold', [addresscontroller::class,'addres'])->name('address.store');
+
 
 Route::get('/sell', [DynamicDependent::class,'index'])->name('sell')->middleware(['auth']);
 
 Route::post('sell/fetch', [DynamicDependent::class,'fetch'])->middleware(['auth'])->name('dynamicdependent.fetch');
 
-Route::get('/myform', [HomeController::class,'index'])->name('myform');
+Route::post('sell', [sellsubmit::class,'create'])->name('sell.store');
 
-Route::post('myform/fetch', [HomeController::class,'fetch'])->name('home.fetch');
 
-Route::get('brandmodeldropdown', Brandmodeldropdown::class);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

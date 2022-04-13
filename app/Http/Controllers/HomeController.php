@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\recycledetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
 { 
-    
-    function index()
+    public function recycled()
     {
      $country_list = DB::table('smartphones')
          ->groupBy('brand')
          ->get();
-     return view('myform')->with('country_list', $country_list);
+     return view('recycle')->with('country_list', $country_list);
     }
 
-    function fetch(Request $request)
+    public function recyclefetch(Request $request)
     {
      $select = $request->get('select');
      $value = $request->get('value');
@@ -34,5 +33,4 @@ class HomeController extends Controller
      echo $output;
     }
 }
-
 ?>

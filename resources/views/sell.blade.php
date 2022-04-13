@@ -56,7 +56,7 @@
    <br />
   </div>
   
-	<div class="g-4 py-2"><h4>Extra Credit After Analysis Please Check Below Applicable Conditions:</h4></span></div>
+	<div class="g-4 py-2"><h4>Extra Credit After Analysis Please Check Below Applicable Conditions:</h4></div>
 	<div class="col-lg">
     <div class="form-check">
   <input class="form-check-input" type="checkbox" id="check1" name="option1" value="warranty" >
@@ -68,6 +68,24 @@
   <input class="ml-4form-check-input" type="checkbox" id="check4" name="option4" value="original invoice" >
   <label class="form-check-label">Original Invoice</label>
   </div>
+  <div class="col-lg mt-4">
+  <div class="card text-white bg-info mb-3">
+  <div class="card-header"><h4>Choose the Pyment method:</h4></div>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+  Instant Cash
+  </label>
+</div>
+<div class="form-check mt-4">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+  Online Transaction
+  </label>
+</div>
+<img src="https://tj-web-prod.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/Best-Payment-Gateways-in-India_Feature.jpg" width="200" height="100"  alt="">
+</div>
+</div>
 </div>
 </div>
   <div class="col">
@@ -106,13 +124,13 @@ $(document).ready(function(){
   }
  });
 
- $('#country').change(function(){
-  $('#state').val('');
-  $('#city').val('');
+ $('#brand').change(function(){
+  $('#model').val('');
+  $('#price').val('');
  });
 
- $('#state').change(function(){
-  $('#city').val('');
+ $('#model').change(function(){
+  $('#price').val('');
  });
  
 
