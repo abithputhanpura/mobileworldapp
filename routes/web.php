@@ -13,16 +13,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\addresscontroller;
 use App\Http\Controllers\recycleadress;
 use App\Http\Controllers\dashb;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\AdmController;
+use App\Http\Controllers\adminrecycleController;
+use App\Http\Controllers\adminsellController;
+use App\Http\Controllers\donatedController;
+use App\Http\Controllers\admindonateController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +29,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('admin', [AdmController::class,'work'])->name('admin');
+
+Route::get('admin/adminrecycle', [adminrecycleController::class,'index'])->name('adminrecycle');
+
+Route::get('admin/admisell', [adminsellController::class,'index'])->name('adminsell');
+
+Route::get('admin/admidonate', [admindonateController::class,'index'])->name('admindonate');
+
 Route::post('donate', [DonateController::class,'donatecreate'])->name('donate.store')->middleware(['auth']);
 
 // Route::get('donate/donated', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
@@ -39,7 +44,6 @@ Route::post('donate', [DonateController::class,'donatecreate'])->name('donate.st
 Route::get('donate', [DonateController::class,'donate'])->name('donate')->middleware(['auth']);
 
 Route::get('dashboard', [dashb::class,'index'])->name('dashboard')->middleware(['auth']);
-
 
 Route::get('recycle', [HomeController::class,'recycled'])->middleware(['auth'])->name('recycle');
 
@@ -67,6 +71,13 @@ Route::get('/sell', [DynamicDependent::class,'index'])->name('sell')->middleware
 Route::post('sell/fetch', [DynamicDependent::class,'fetch'])->middleware(['auth'])->name('dynamicdependent.fetch');
 
 Route::post('sell', [sellsubmit::class,'create'])->name('sell.store');
+
+
+Route::get('donate/donated', [donatedController::class,'index'])->middleware(['auth']);
+Route::post('donate/donated/fetch', [donatedController::class,'fetch'])->name('dynamic.fetch')->middleware(['auth']);
+  
+
+Route::post('donate/donated', [donatedController::class,'addres'])->name('donate.store');
 
 
 // Route::get('/dashboard', function () {

@@ -59,27 +59,27 @@
 	<div class="g-4 py-2"><h4>Extra Credit After Analysis Please Check Below Applicable Conditions:</h4></div>
 	<div class="col-lg">
     <div class="form-check">
-  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="warranty" >
+  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="yes" >
   <label class="ml-4 form-check-label">Warranty</label>
-  <input class="ml-4form-check-input" type="checkbox" id="check2" name="option2" value="charger" >
+  <input class="ml-4form-check-input" type="checkbox" id="check2" name="option2" value="yes" >
   <label class="form-check-label">Charger</label>
-  <input class="ml-4form-check-input" type="checkbox" id="check3" name="option3" value="original box" >
+  <input class="ml-4form-check-input" type="checkbox" id="check3" name="option3" value="yes" >
   <label class="form-check-label">Original Box</label>
-  <input class="ml-4form-check-input" type="checkbox" id="check4" name="option4" value="original invoice" >
+  <input class="ml-4form-check-input" type="checkbox" id="check4" name="option4" value="yes" >
   <label class="form-check-label">Original Invoice</label>
   </div>
   <div class="col-lg mt-4">
   <div class="card text-white bg-info mb-3">
   <div class="card-header"><h4>Choose the Pyment method:</h4></div>
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="instantcash" checked>
   <label class="form-check-label" for="exampleRadios1">
   Instant Cash
   </label>
 </div>
-<div class="form-check mt-4">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
+<div class="form-check mt-4" id="Radios">
+  <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="Upi">
+  <label class="form-check-label" for="exampleRadios1">
   Online Transaction
   </label>
 </div>

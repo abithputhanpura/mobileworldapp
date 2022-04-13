@@ -22,6 +22,8 @@ class sellsubmit extends Controller
     $sell->charger= $request->input('option2');
     $sell->box= $request->input('option3');
     $sell->invoice= $request->input('option4');
+    $sell->amount= $request->input('price');
+    $sell->payment= $request->input('Radios');
 
 
     $sell->save();

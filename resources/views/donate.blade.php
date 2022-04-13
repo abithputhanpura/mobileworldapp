@@ -37,13 +37,14 @@
 
 <div class="container">
 <form method="POST" action="{{route('donate.store')}}">
+  @csrf
   <div class="form-group">
     <label for="formGroupExampleInput">Brand:</label>
-    <input type="text" class="form-group mx-sm-3 mb-2 mt-4" id="brand" placeholder="eg:SAMSUNG">
+    <input type="text" class="form-group mx-sm-3 mb-2 mt-4" name="brand" id="brand" placeholder="eg:SAMSUNG">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Model:</label>
-    <input type="text" class="form-group mx-sm-3 mb-2 mt-4" id="message" placeholder="eg:M21">
+    <input type="text" class="form-group mx-sm-3 mb-2 mt-4" name="model" id="model" placeholder="eg:M21">
   </div>
   <button type="submit" class="btn btn-success float-end mb-2">DONATE</button>
 </form>

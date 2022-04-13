@@ -23,7 +23,7 @@ color: hsl(52, 0%, 98%);
 
 
 <body>
-<form method="POST" action="{{route('####')}}">
+<form method="POST" action="{{route('donate.store')}}">
   @csrf
 <div class="container py-5">
   <div class="row d-flex justify-content-center align-items-center">
@@ -137,7 +137,7 @@ $(document).ready(function(){
    var dependent = $(this).data('dependent');
    var _token = $('input[name="_token"]').val();
    $.ajax({
-    url:"{{ route('####') }}",
+    url:"{{ route('dynamic.fetch') }}",
     method:"POST",
     data:{select:select, value:value, _token:_token, dependent:dependent},
     success:function(result)

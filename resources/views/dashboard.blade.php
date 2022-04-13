@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-<h1>RECYCLED DETAILS:</h1>
+<h1>TRANSACTION DETAILS:</h1>
 <div class="row">
     <div class="col-md-4 row-height">
         <span>username</span>
@@ -65,6 +65,28 @@
     </div>
     <div class="col-md-2 row-height">
     {{ $user->model}}
+    </div>
+</div>
+@endforeach
+</div>
+@foreach ($men as $user)
+<div class="row">
+    <div class="col-md-6 row-height">
+    {{ $user->brand}}
+    </div>
+    <div class="col-md-2 row-height">
+    {{ $user->model}}
+    </div>
+</div>
+@endforeach
+</div>
+@foreach ($mens as $user)
+<div class="row">
+    <div class="col-md-6 row-height">
+    {{ $user->brand}}
+    </div>
+    <div class="col-md-2 row-height">
+    {{ $user->message}}
     </div>
 </div>
 @endforeach

@@ -14,10 +14,9 @@ class DonateController extends Controller
 
     }
 
-
-
     public function donatecreate(Request $request)
     {
+
       $email = \Auth::user()->email;
       //  post control
        $donate = new donate();
