@@ -27,15 +27,16 @@
    </div>
    <br />
    <div class="form-group">
-    <select name="model" id="model" class="form-control input-lg dynamic" data-dependent="price">
+    <select name="model" id="model" class="form-control input-lg dynamic" >
      <option value="">Select Model</option>
     </select>
    </div>
    <br />
-   <div class="form-group">
-    <select name="price" id="price" class="form-control input-lg">
-     <option value="">Select Price</option>
+   <div class="">
+    <ul><select name="price" id="price" class="form-control input-lg">
+     <li value="">selected></li>
     </select>
+    </ul>
    </div>
    {{ csrf_field() }}
    <br />
@@ -55,7 +56,7 @@ $(document).ready(function(){
    var dependent = $(this).data('dependent');
    var _token = $('input[name="_token"]').val();
    $.ajax({
-    url:"{{ route('dynamicdependent.fetch') }}",
+    url:"{{ route('home.fetch') }}",
     method:"POST",
     data:{select:select, value:value, _token:_token, dependent:dependent},
     success:function(result)

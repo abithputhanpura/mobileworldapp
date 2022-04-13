@@ -9,6 +9,7 @@ use App\Http\Controllers\recycled;
 use App\Http\Livewire\brandmodeldropdown;
 use App\Http\Controllers\sellsubmitted;
 use App\Http\Controllers\DynamicDependent;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,9 @@ Route::get('/sell', [DynamicDependent::class,'index'])->name('sell')->middleware
 
 Route::post('sell/fetch', [DynamicDependent::class,'fetch'])->middleware(['auth'])->name('dynamicdependent.fetch');
 
+Route::get('/myform', [HomeController::class,'index'])->name('myform');
+
+Route::post('myform/fetch', [HomeController::class,'fetch'])->name('home.fetch');
 
 Route::get('brandmodeldropdown', Brandmodeldropdown::class);
 
