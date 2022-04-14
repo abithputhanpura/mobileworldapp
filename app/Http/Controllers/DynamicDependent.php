@@ -11,7 +11,7 @@ class DynamicDependent extends Controller
     function index()
     {
      $country_list = DB::table('phonedetails')
-         ->groupBy('brand','model')
+         ->groupBy('id','model')
          ->get();
      return view('sell')->with('country_list', $country_list);
     }
