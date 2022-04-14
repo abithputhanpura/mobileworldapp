@@ -77,7 +77,7 @@ Route::get('donate/donated', [donatedController::class,'index'])->middleware(['a
 Route::post('donate/donated/fetch', [donatedController::class,'fetch'])->name('dynamic.fetch')->middleware(['auth']);
   
 
-Route::post('donate/donated', [donatedController::class,'addres'])->name('donate.store');
+Route::post('donate/donated', [donatedController::class,'addres'])->name('donated.store');
 
 
 // Route::get('/dashboard', function () {

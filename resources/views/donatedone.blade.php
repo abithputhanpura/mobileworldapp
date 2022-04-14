@@ -23,7 +23,7 @@ color: hsl(52, 0%, 98%);
 
 
 <body>
-<form method="POST" action="{{route('donate.store')}}">
+<form method="POST" action="{{route('donated.store')}}">
   @csrf
 <div class="container py-5">
   <div class="row d-flex justify-content-center align-items-center">
