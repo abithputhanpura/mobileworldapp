@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function recycled()
     {
      $country_list = DB::table('phonedetails')
-         ->groupBy('brand')
+         ->groupBy('Brand')
          ->get();
      return view('recycle')->with('country_list', $country_list);
     }
