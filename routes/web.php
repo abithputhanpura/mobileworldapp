@@ -18,7 +18,8 @@ use App\Http\Controllers\adminrecycleController;
 use App\Http\Controllers\adminsellController;
 use App\Http\Controllers\donatedController;
 use App\Http\Controllers\admindonateController;
-
+use App\Http\Controllers\phoneController;
+use App\Http\Controllers\statecityController;
 
 
 Route::get('/', function () {
@@ -28,6 +29,16 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('state', [statecityController::class,'cr'])->name('state');
+
+Route::post('state', [statecityController::class,'data'])->name('state.store');
+
+
+
+Route::get('phone', [phoneController::class,'cr'])->name('phone');
+
+Route::post('phone', [phoneController::class,'data'])->name('phone.store');
 
 Route::get('admin', [AdmController::class,'work'])->name('admin');
 

@@ -10,7 +10,7 @@ class HomeController extends Controller
 { 
     public function recycled()
     {
-     $country_list = DB::table('smartphone')
+     $country_list = DB::table('phonedetails')
          ->groupBy('brand')
          ->get();
      return view('recycle')->with('country_list', $country_list);
@@ -21,7 +21,7 @@ class HomeController extends Controller
      $select = $request->get('select');
      $value = $request->get('value');
      $dependent = $request->get('dependent');
-     $data = DB::table('smartphone')
+     $data = DB::table('phonedetails')
        ->where($select, $value)
        ->groupBy($dependent)
        ->get();

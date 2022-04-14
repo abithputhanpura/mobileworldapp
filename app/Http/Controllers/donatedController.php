@@ -10,7 +10,7 @@ class donatedController extends Controller
 {
     function index()
     {
-     $country_list = DB::table('state_city')
+     $country_list = DB::table('statelists')
          ->groupBy('state')
          ->get();
      return view('donatedone')->with('country_list', $country_list);
@@ -21,7 +21,7 @@ class donatedController extends Controller
      $select = $request->get('select');
      $value = $request->get('value');
      $dependent = $request->get('dependent');
-     $data = DB::table('state_city')
+     $data = DB::table('statelists')
        ->where($select, $value)
        ->groupBy($dependent)
        ->get();
