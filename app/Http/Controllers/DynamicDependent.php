@@ -10,7 +10,7 @@ class DynamicDependent extends Controller
 {
     function index()
     {
-     $country_list = DB::table('smartphones')
+     $country_list = DB::table('smartphone')
          ->groupBy('brand')
          ->get();
      return view('sell')->with('country_list', $country_list);
@@ -21,7 +21,7 @@ class DynamicDependent extends Controller
      $select = $request->get('select');
      $value = $request->get('value');
      $dependent = $request->get('dependent');
-     $data = DB::table('smartphones')
+     $data = DB::table('smartphone')
        ->where($select, $value)
        ->groupBy($dependent)
        ->get();
