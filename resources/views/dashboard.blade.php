@@ -45,6 +45,7 @@
     <div class="container">
 <h1>TRANSACTION DETAILS:</h1>
 <div class="row">
+    <h3>Recycle details:</h3>
     <div class="col-md-4 row-height">
         <span>username</span>
     </div>
@@ -54,7 +55,7 @@
     <div class="col-md-2 row-height">
     model
     </div>
-</div>
+
 @foreach ($man as $user)
 <div class="row">
     <div class="col-md-4 row-height">
@@ -69,9 +70,17 @@
 </div>
 @endforeach
 </div>
+<div class="row">
+ <h3>Sell details:</h3>
+    <div class="col-md-4 row-height">
+        <span>brand</span>
+    </div>
+    <div class="col-md-2 row-height">
+    model
+    </div>
 @foreach ($men as $user)
 <div class="row">
-    <div class="col-md-6 row-height">
+    <div class="col-md-4 row-height">
     {{ $user->brand}}
     </div>
     <div class="col-md-2 row-height">
@@ -80,9 +89,17 @@
 </div>
 @endforeach
 </div>
+<div class="row">
+ <h3>Donate details:</h3>
+    <div class="col-md-4 row-height">
+        <span>brand</span>
+    </div>
+    <div class="col-md-2 row-height">
+    model
+    </div>
 @foreach ($mens as $user)
 <div class="row">
-    <div class="col-md-6 row-height">
+    <div class="col-md-4 row-height">
     {{ $user->brand}}
     </div>
     <div class="col-md-2 row-height">
@@ -90,6 +107,7 @@
     </div>
 </div>
 @endforeach
+</div>
 </div>
 </div>
 </body>
