@@ -9,9 +9,9 @@ class AdmController extends Controller
 {
     public function work(Request $request)
     {
-        $role = Auth::user()->role;
+        $role = Auth::user()->name;
 
-        if($role=='1')
+        if($role=='admin')
         {
 
                 return view('admin');

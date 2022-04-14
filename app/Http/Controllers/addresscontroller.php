@@ -11,8 +11,8 @@ class addresscontroller extends Controller
   
 function index()
     {
-     $country_list = DB::table('statelists')
-         ->groupBy('id','state')->distinct()
+     $country_list = DB::table('statelists')->distinct('state')
+         ->groupBy('id','state')
          ->get();
      return view('sellsubmitted')->with('country_list', $country_list);
     }

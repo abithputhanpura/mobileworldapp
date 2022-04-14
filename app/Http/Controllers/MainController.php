@@ -9,8 +9,8 @@ class MainController extends Controller
 {
     public function recycleindex()
     {
-     $country_list = DB::table('statelists')
-         ->groupBy('id','state')->distinct()
+     $country_list = DB::table('statelists')->distinct('state')
+         ->groupBy('id','state')
          ->get();
      return view('recycled')->with('country_list', $country_list);
     }
