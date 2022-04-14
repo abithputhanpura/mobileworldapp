@@ -12,6 +12,11 @@ class recycled extends Controller
 
     public function create(Request $request)
         {
+            $request->validate([
+                'brand' => ['required'],
+                'model' => ['required'],
+               
+            ]);
 
             $user = \Auth::user()->name;
             $email = \Auth::user()->email;

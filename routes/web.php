@@ -30,15 +30,15 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('state', [statecityController::class,'cr'])->name('state');
+Route::get('admin/state', [statecityController::class,'cr'])->name('state');
 
-Route::post('state', [statecityController::class,'data'])->name('state.store');
+Route::post('admin/state', [statecityController::class,'data'])->name('state.store');
 
 
 
-Route::get('phone', [phoneController::class,'cr'])->name('phone');
+Route::get('admin/phone', [phoneController::class,'cr'])->name('phone');
 
-Route::post('phone', [phoneController::class,'data'])->name('phone.store');
+Route::post('admin/phone', [phoneController::class,'data'])->name('phone.store');
 
 Route::get('admin', [AdmController::class,'work'])->name('admin');
 

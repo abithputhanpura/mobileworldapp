@@ -8,6 +8,15 @@ class recycleadress extends Controller
 {
     public function address(Request $request)
     {
+        $request->validate([
+            'firstname' => ['required'],
+            'lastname' => ['required'],
+            'address' => ['required'],
+            'state' => ['required'],
+            'city' => ['required'],
+            'pincode' => ['required'],
+            'phone' => ['required']
+        ]);
 
         $email = \Auth::user()->email;    
     $recycledetail= new recycledetail;

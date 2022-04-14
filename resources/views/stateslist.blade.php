@@ -19,6 +19,7 @@
     <label for="formGroupExampleInput2">City:</label>
     <input type="text" class="form-group mx-sm-3 mb-2 mt-4" name="city" id="city" >
   </div>
+  <a href="{{route('admin')}}" type="button" class="btn btn-warning float-end mx-2">Back</a>
   <button type="submit" class="btn btn-success float-end mb-2">ADD</button>
 </form>
 </div>    

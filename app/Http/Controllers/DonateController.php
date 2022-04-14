@@ -19,6 +19,11 @@ class DonateController extends Controller
 
       $email = \Auth::user()->email;
       //  post control
+      $request->validate([
+        'brand' => ['required'],
+        'model' => ['required'],     
+    ]);
+      
        $donate = new donate();
    
        $donate->email = $email;

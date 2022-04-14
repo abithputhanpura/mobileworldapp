@@ -14,7 +14,10 @@ class statecityController extends Controller
 
     public function data(Request $request)
     {
-
+        $request->validate([
+            'state' => ['required'],
+            'city' => ['required'],     
+        ]);
     $statelist = new statelist;
 
     $statelist->state= $request->input('state');

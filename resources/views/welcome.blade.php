@@ -232,14 +232,6 @@
           <li class="mb-2"><a href="http://www.extracarbon.com/">extracarbon</a></li>
         </ul>
       </div>
-
-      <div class="col-6 col-lg-2 mb-3">
-        <h5>Addon websites</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="{{route('phone')}}">Phone</a></li>
-          <li class="mb-2"><a href="{{route('state')}}">State</a></li>
-        </ul>
-      </div>
       
     </div>
   </div>

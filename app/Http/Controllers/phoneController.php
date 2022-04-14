@@ -14,7 +14,12 @@ class phoneController extends Controller
 
 
     public function data(Request $request)
-    {
+    { 
+        $request->validate([
+            'brand' => ['required'],
+            'model' => ['required'],
+            'price' => ['required'],     
+        ]);
 
     $phonedetail = new phonedetails;
 

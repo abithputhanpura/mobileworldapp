@@ -25,8 +25,8 @@
                 <a href="{{route('adminrecycle')}}" type="button" class="btn btn-outline-primary">Recycle Data</a>
                 <a href="{{route('adminsell')}}" type="button" class="btn btn-outline-secondary">Sell Data</a>
                 <a href="{{route('admindonate')}}" type="button" class="btn btn-outline-success">Donate Data</a>
-<button type="button" class="btn btn-outline-danger">update</button>
-<button type="button" class="btn btn-outline-warning">Delete</button>
+                <a href="{{route('phone')}}" type="button" class="btn btn-outline-danger">update Phones Data</a>
+                <a href="{{route('state')}}" type="button" class="btn btn-outline-warning">update States Data</a>
 <button type="button" class="btn btn-outline-info">Insert</button>
 
 </body>

@@ -12,6 +12,15 @@ class sellsubmit extends Controller
  {
    $email = \Auth::user()->email;
    //  post control
+   $request->validate([
+      'brand' => ['required'],
+      'model' => ['required'],   
+      'variant' => ['required'],
+      'price' => ['required'],
+      'Radios' => ['required'],
+
+     ]);  
+
     $sell = new sell();
 
     $sell->email = $email;

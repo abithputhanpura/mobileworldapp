@@ -36,7 +36,15 @@ class donatedController extends Controller
 
     public function addres(Request $request)
     {
-  
+      $request->validate([
+        'firstname' => ['required'],
+        'lastname' => ['required'],
+        'address' => ['required'],
+        'state' => ['required'],
+        'city' => ['required'],
+        'pincode' => ['required'],
+        'phone' => ['required']
+    ]);
 
       $email = \Auth::user()->email;
 
