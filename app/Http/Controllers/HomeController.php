@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function recycled()
     {
      $country_list = DB::table('phonedetails')
-         ->groupBy('brand')
+         ->groupBy('id','brand')->distinct()
          ->get();
      return view('recycle')->with('country_list', $country_list);
     }
@@ -23,7 +23,7 @@ class HomeController extends Controller
      $dependent = $request->get('dependent');
      $data = DB::table('phonedetails')
        ->where($select, $value)
-       ->groupBy($dependent)
+       ->groupBy('id',$dependent)
        ->get();
      $output = '<option value="">Select '.ucfirst($dependent).'</option>';
      foreach($data as $row)

@@ -10,7 +10,7 @@ class MainController extends Controller
     public function recycleindex()
     {
      $country_list = DB::table('statelists')
-         ->groupBy('state')
+         ->groupBy('id','state')->distinct()
          ->get();
      return view('recycled')->with('country_list', $country_list);
     }
@@ -22,7 +22,7 @@ class MainController extends Controller
      $dependent = $request->get('dependent');
      $data = DB::table('statelists')
        ->where($select, $value)
-       ->groupBy($dependent)
+       ->groupBy('id',$dependent)
        ->get();
      $output = '<option value="">Select '.ucfirst($dependent).'</option>';
      foreach($data as $row)

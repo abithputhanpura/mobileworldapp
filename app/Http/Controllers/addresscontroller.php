@@ -12,7 +12,7 @@ class addresscontroller extends Controller
 function index()
     {
      $country_list = DB::table('statelists')
-         ->groupBy('state')
+         ->groupBy('id','state')->distinct()
          ->get();
      return view('sellsubmitted')->with('country_list', $country_list);
     }
@@ -24,7 +24,7 @@ function index()
      $dependent = $request->get('dependent');
      $data = DB::table('statelists')
        ->where($select, $value)
-       ->groupBy($dependent)
+       ->groupBy('id',$dependent)
        ->get();
      $output = '<option value="">Select '.ucfirst($dependent).'</option>';
      foreach($data as $row)
