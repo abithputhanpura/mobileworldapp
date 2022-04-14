@@ -12,7 +12,7 @@ class addresscontroller extends Controller
 function index()
     {
      $country_list = DB::table('statelists')
-         ->groupBy('State')
+         ->groupBy('state')
          ->get();
      return view('sellsubmitted')->with('country_list', $country_list);
     }

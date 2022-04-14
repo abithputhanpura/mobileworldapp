@@ -11,7 +11,7 @@ class donatedController extends Controller
     function index()
     {
      $country_list = DB::table('statelists')
-         ->groupBy('State')
+         ->groupBy('state')
          ->get();
      return view('donatedone')->with('country_list', $country_list);
     }
