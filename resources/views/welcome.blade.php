@@ -38,7 +38,7 @@
   <li class="mx-auto nav-item">
   </li>
   <li class="nav-item">
-  <a href="{{ route('register') }}" class="nav-link">Home</a>
+  <a href="/" class="nav-link">Home</a>
   </li>
   <li class="nav-item">
   <a href="{{ route('sell') }}" class="nav-link">Sell</a>
@@ -219,7 +219,7 @@
           <li class="mb-2"><a href="/sell">Sell</a></li>
           <li class="mb-2"><a href="/donate">Donate</a></li>
           <li class="mb-2"><a href="/recycle">Recycle</a></li>
-          <li class="mb-2"><a href="#">Home</a></li>
+          <li class="mb-2"><a href="/">Home</a></li>
         </ul>
       </div>
      
