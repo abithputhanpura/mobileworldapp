@@ -27,7 +27,7 @@
                 <a href="{{route('admindonate')}}" type="button" class="btn btn-outline-success">Donate Data</a>
                 <a href="{{route('phone')}}" type="button" class="btn btn-outline-danger">update Phones Data</a>
                 <a href="{{route('state')}}" type="button" class="btn btn-outline-warning">update States Data</a>
-<button type="button" class="btn btn-outline-info">Insert</button>
+<button type="button" class="btn btn-outline-info">Users Data</button>
 
 </body>
 </html>
