@@ -33,11 +33,17 @@
      <option value="{{ $country->brand}}">{{ $country->brand }}</option>
      @endforeach
     </select>
+    @if ($errors->has('brand'))
+                    <span class="text-danger">{{ $errors->first('brand') }}</span>
+                @endif
    </div>
 <div class="col g-4">Model</div>
    <div class="col g-4"><select name="model" id="model" class="form-control input-lg dynamic" data-dependent="price">
      <option value="">Select Model</option>
   </select>
+  @if ($errors->has('model'))
+                    <span class="text-danger">{{ $errors->first('model') }}</span>
+                @endif
   </div>
   {{ csrf_field() }}
 <h5 style="align:center">Switch On

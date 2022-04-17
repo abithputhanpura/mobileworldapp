@@ -69,7 +69,7 @@ Route::post('recycle/recycled/recycledfetch', [MainController::class,'recycledfe
 Route::post('recycle/recycled', [recycleadress::class,'address'])->name('recycled.store');
 
 
-Route::get('sell/sold', [addresscontroller::class,'index'])->middleware(['auth']);
+Route::get('sell/sold', [addresscontroller::class,'index'])->name('sell/sold')->middleware(['auth']);
 
 Route::post('sell/sold/fetch', [addresscontroller::class,'fetch'])->name('dynamic.fetch')->middleware(['auth']);
   

@@ -25,7 +25,7 @@ color: hsl(52, 0%, 98%);
 <body>
 <form method="POST" action="{{route('recycled.store')}}">
   @csrf
-<div class="container py-5">
+  <div class="container py-5">
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col">
       <div class="card my-4 shadow-3">
@@ -64,21 +64,28 @@ color: hsl(52, 0%, 98%);
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input type="text" name="firstname" class="form-control form-control-lg" placeholder="First name">
-                 
+                    @if ($errors->has('firstname'))
+                    <span class="text-danger">{{ $errors->first('firstname') }}</span>
+                @endif
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input type="text" name="lastname" class="form-control form-control-lg" placeholder="Last name">
-                   
+                    @if ($errors->has('lastname'))
+                    <span class="text-danger">{{ $errors->first('lastname') }}</span>
+                    @endif
                   </div>
                 </div>
               </div>
 
               <div class="form-outline mb-4">
                 <input type="text" name="address" class="form-control form-control-lg" placeholder="Address">
+                @if ($errors->has('address'))
+                <span class="text-danger">{{ $errors->first('address') }}</span>
+                @endif
               </div>
-
+              
 
 
               <div class="row">
@@ -90,22 +97,32 @@ color: hsl(52, 0%, 98%);
                 <option value="{{ $country->state}}">{{ $country->state}}</option>
                  @endforeach
                  </select>
+                 @if ($errors->has('state'))
+                    <span class="text-danger">{{ $errors->first('state') }}</span>
+                @endif
                     </div>
                   <div class="col-md-6 mb-4">
                   <div class="col g-4"><select name="city" id="city" class="form-control input-lg dynamic">
                     <option value="">Select City</option>
                  </select>
+                 @if ($errors->has('city'))
+                    <span class="text-danger">{{ $errors->first('city') }}</span>
+                @endif
                  </div>                           
               </div>
               {{ csrf_field() }}
               <div class="form-outline mb-4">
                 <input type="text" name="pincode" class="form-control form-control-lg" placeholder="Pincode">
-               
+                @if ($errors->has('pincode'))
+                <span class="text-danger">{{ $errors->first('pincode') }}</span>
+                @endif
               </div>
 
               <div class="form-outline mb-4">
                 <input type="text" name="phone" class="form-control form-control-lg" placeholder="Phone">
-                
+                @if ($errors->has('phone'))
+                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                @endif
               </div>
 
               <div class="d-flex justify-content-end pt-3">

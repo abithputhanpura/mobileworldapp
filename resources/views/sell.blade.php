@@ -28,28 +28,41 @@
      <option value="{{ $country->brand}}">{{ $country->brand }}</option>
      @endforeach
     </select>
+    @if ($errors->has('brand'))
+                    <span class="text-danger">{{ $errors->first('brand') }}</span>
+                @endif
    </div>
 <div class="col g-4">Model</div>
    <div class="col g-4"><select name="model" id="model" class="form-control input-lg dynamic" data-dependent="price">
      <option value="">Select Model</option>
   </select>
+  @if ($errors->has('model'))
+                    <span class="text-danger">{{ $errors->first('model') }}</span>
+                @endif
   </div>
 
  
 
-  <div class="col g-4">Varient</div>
+  <div class="col g-4">Variant</div>
     <div class="col g-4">
-    <select class="form-select" name='variant' aria-label="Default select example">
-    <option selected>select varient</option>
+    <select name="variant" id ="variant" class="form-control input-lg" >
+    <option selected>select variant</option>
     <option value="4gb">4gb</option> 
     <option value="6gb">6gb</option> 
-    </select></div>
+    </select>
+    @if ($errors->has('variant'))
+                    <span class="text-danger">{{ $errors->first('variant') }}</span>
+                @endif
+    </div>
 	
   <div class="col g-4">Gauranteed amount</div>
   <div class="col g-4">
     <select name="price" id="price" class="form-control input-lg">
      <option value="">Price</option>
     </select>
+    @if ($errors->has('price'))
+                    <span class="text-danger">{{ $errors->first('price') }}</span>
+                @endif
    </div>
    {{ csrf_field() }}
    <br />

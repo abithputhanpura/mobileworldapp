@@ -21,7 +21,10 @@ class DonateController extends Controller
       //  post control
       $request->validate([
         'brand' => ['required'],
-        'model' => ['required'],     
+        'model' => ['required']],
+        [
+          'brand.required' => '*required',
+               'model.required' => '*required',     
     ]);
       
        $donate = new donate();

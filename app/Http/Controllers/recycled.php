@@ -14,7 +14,10 @@ class recycled extends Controller
         {
             $request->validate([
                 'brand' => ['required'],
-                'model' => ['required'],
+                'model' => ['required']],
+                [ 
+                    'brand.required' => '*required',
+                    'model.required' => '*required',
                
             ]);
 

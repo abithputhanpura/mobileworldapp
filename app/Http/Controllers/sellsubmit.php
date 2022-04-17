@@ -17,7 +17,12 @@ class sellsubmit extends Controller
       'model' => ['required'],   
       'variant' => ['required'],
       'price' => ['required'],
-      'Radios' => ['required'],
+      'Radios' => ['required'],],
+      [
+         'brand.required' => '*required',
+              'model.required' => '*required',
+              'variant.required' => '*required',
+              'price.required' => '*required',
 
      ]);  
 
@@ -37,6 +42,6 @@ class sellsubmit extends Controller
 
     $sell->save();
 
-    return redirect('sell/sold');
+    return redirect()->route('sell/sold');
  }
 }

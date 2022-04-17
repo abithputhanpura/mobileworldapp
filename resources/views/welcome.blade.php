@@ -51,6 +51,7 @@
   </li>
   <li class="nav-item">
             @if (Route::has('login'))
+            
                     @auth
                         <a class="nav-link active"  href="{{ url('/dashboard') }}">Dashboard</a>
                         </li>
